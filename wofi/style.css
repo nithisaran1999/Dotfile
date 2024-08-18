@@ -1,0 +1,48 @@
+@define-color txt #FFFFFF;
+@define-color bg #0F1419;
+@define-color border #ADE8F4;
+* {
+    font-family: 'JetBrainsMonoNerdFont';
+    font-size: 24px;
+}
+window {
+    background: @bg;
+	color: @text;
+    margin: 0px;
+    padding: 5px;
+    border: 3px solid @border;
+    border-radius: 7px;
+    animation: slideIn 0.5s ease-in-out both;
+}
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#scroll {
+    margin: 0px;
+    padding: 5px;
+    border: none;
+}
+image {
+    margin-left: .20em;
+    margin-right .20em;
+}
+#input {
+    color: @txt;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @bg;
+    animation: fadeIn 0.5s ease-in-out both;
+}
+#text {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    color: @txt;
+    animation: fadein 0.5s ease-in-out both;
+}

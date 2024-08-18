@@ -1,0 +1,133 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 0,
+    "modules-left": ["hyprland/workspaces", "network", "clock","hyprland/language"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "tray",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "bluetooth",
+        "battery",
+        "custom/notification",
+        "custom/power"
+    ],
+
+    "cpu": {
+        "interval": 1,
+        "format": " {}%",
+        "max-length": 20
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {}%",
+        "max-length": 20
+    },
+"bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+},
+"battery": {
+    "bat": "BAT2",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 10
+},
+"hyprland/language":{
+ "format": "  {}",
+ "format-en": "US",
+ "format-th": "TH"
+},
+    "custom/notification": {
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "tooltip-format": "Notification Widgets"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    },
+
+    "hyprland/window": {
+        "icon": true,
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    "hyprland/workspaces": {
+        "sort-by-name": true,
+        "on-click": "activate"
+    },
+
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
+    },
+
+    "clock": {
+      "format": " {:%Y/%m/%d }",
+      "format-alt": " {:%H:%M:%S}",
+      "interval": 1
+    },
+"network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+},
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": " ",
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+  "battery": {
+    "interval": 60,
+    "format-time": "{H}:{m}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format-discharging": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format": ""
+  }
+}
